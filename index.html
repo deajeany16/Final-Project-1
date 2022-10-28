@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link text-dark bg-primary rounded " href="index.html">HOME</a>
+          <a class="nav-link text-white bg-primary rounded " href="index.html">HOME</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-dark " href="portofolio.html">PORTOFOLIO</a>
@@ -60,14 +61,13 @@
       <div class="order-now d-flex justify-content-end">
         <button class="btn" onclick="openPopUp()">Order Now</button>
       </div>
-
     </div>
   </div>
 
-  <div class="popup" id="pricelist">
+  <div class="popup">
     <i class="fa fa-window-close-o" aria-hidden="true" onclick="closePopUp()"></i>
     <h2 class="text-center">Daftar Harga Rental Mobil</h2>
-    <table class="table table-bordered justify-content-center">
+    <table class="table table-bordered table-responsive justify-content-center">
       <thead>
         <tr>
           <th>Jenis Mobil</th>
@@ -115,10 +115,57 @@
         </tr>
       </tbody>
     </table>
-    <button class="btn btn-dark d-flex ml-auto booking"><a
-        href="https://api.whatsapp.com/send?phone=6285248868240&text=%20Permisi,%20saya%20ingin%20booking%20mobil">Booking</a></button>
+    <button class="btn btn-dark d-flex ml-auto booking" onclick="bookingForm()">Booking</button>
   </div>
 
+  <!--Form Booking-->
+  <div class="booking-form">
+    <i class="fa fa-window-close-o" aria-hidden="true" onclick="closeForm()"></i>
+    <h4 class="text-center">Pemesanan Sewa Mobil</h4>
+    <form>
+      <div class="form-group">
+        <label>Nama Pemesan</label>
+        <br>
+        <input type="text" id="nama">
+      </div>
+      <div class="form-group">
+        <label>No. HP / WA</label>
+        <br>
+        <input type="text" id="telp">
+      </div>
+      <div class="form-group">
+        <label>Alamat Pemesan </label>
+        <br>
+        <input type="text" id="alamat">
+      </div>
+      <div class="form-group">
+        <label>Jenis Mobil </label>
+        <select name="cars" id="cars" class="form-control">
+          <option>Pilih Jenis Mobil</option>
+          <option value="Toyota Yaris">Toyota Yaris</option>
+          <option value="Honda Jazz">Honda Jazz</option>
+          <option value="Suzuki Ertiga">Suzuki Ertiga</option>
+          <option value="Honda Mobilio">Honda Mobilio</option>
+          <option value="New Xpander">New Xpander</option>
+          <option value="Innova Grand">Innova Grand</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Jumlah Hari Penyewaan</label>
+        <br>
+        <input type="text" placeholder="Masukan hanya angka" class="form-control" id="harisewa">
+      </div>
+      <div class="form-group">
+        <label>Tanggal Mulai Penyewaan</label>
+        <br>
+        <input type="date" class="form-control" id="tanggalsewa">
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-dark" onclick="bookCars()">Pesan</button>
+      </div>
+    </form>
+  </div>
+  
   <!-- footer -->
   <div class="footer footer-index text-center">
     <img src="img/logo DD.png" />
@@ -149,6 +196,7 @@
       },
     });
   </script>
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
